@@ -1,0 +1,66 @@
+{
+	// Place your snippets for typescriptreact here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"React Function Component": {
+		"prefix": "fComp",
+		"body": [
+			"import React, { FC } from 'react';",
+			"\ninterface Props {\n\t$2\n}",
+			"\nconst $1: FC<Props> = (props: Props) => {",
+			"\treturn (\n\t\t<>$0</>\n\t);",
+			"}",
+			"\nexport default $1;"
+		],
+		"description": "Template for React Typescript Function Component"
+	},
+	"React Page Component": {
+		"prefix": "pageComp",
+		"body": [
+			"import React, { FC } from 'react';",
+			"import '../Utils/style-utils.css';",
+			"\ninterface Props {\n\t$0\n}",
+			"\nconst $1: FC<Props> = (props: Props) => {",
+			"\treturn (\n\t\t<div className='basic-container'>\n\t\t\t<h3>$1</h3>\n\t\t</div>\n\t);",
+			"}",
+			"\nexport default $1;"
+		],
+		"description": "Template for React Typescript Function Component"
+	},
+	"Class with Partial Constructor": {
+		"prefix": "partClass",
+		"body": [
+			"export class $1 {",
+			"\t$0\n",
+			"\tconstructor(raw?: Partial<$1>) {",
+			"\t\tObject.assign(this, raw);\n\t}",
+			"}"
+		],
+		"description": "Creates a Typescript class with a partial constructor"
+	},
+	"ORM Class with Partial Constructor": {
+		"prefix": "cliRep",
+		"body": [
+			"export class $1 implements ClientRepresentation<$1> {",
+			"\t$0\n",
+			"\tconstructor(raw?: Partial<$1>) {",
+			"\t\tObject.assign(this, this.mapRawData(raw));",
+			"\t}\n",
+			"\tmapRawData(raw: any): $1 {",
+			"\t\treturn new $1();\n\t}",
+			"}"
+		],
+		"description": "Creates a ClientRepresentation class with a partial constructor"
+	},
+}
