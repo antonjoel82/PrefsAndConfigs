@@ -1,0 +1,123 @@
+{
+	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Import React": {
+		"prefix": "rImp",
+		"body": [
+			"import React from 'react';"
+		],
+		"description": "Import default React module"
+	},
+	"Create Shorthand Function": {
+		"prefix": "ffun",
+		"body":[
+			"($1) => {\n\t$0\n}"
+		],
+		"description": "Creates an empty shorthand function"
+	},
+	"Create Const Function": {
+		"prefix": "cFun",
+		"body":[
+			"const $1 = ($2) => {\n\t$0\n}"
+		],
+		"description": "Creates an empty function and sets it in a const variable."
+	},
+	"Create REST Function": {
+		"prefix": "restFun",
+		"body":[
+			"(req, res) => {\n\t$0\n}",
+		],
+		"description": "Creates an empty React Component function"
+	},
+	"Create React Const Function": {
+		"prefix": "reactFun",
+		"body":[
+			"const $1 = ($2) => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t);\n}",
+		],
+		"description": "Creates an empty React Component function"
+	},
+	"Bind function to 'this'": {
+		"prefix": "bindFun",
+		"body": [
+			"this.$1 = this.$1.bind(this);",
+			"$0"
+		],
+		"description": "Creates a statement that binds the specified component function to the component."
+	},
+	"React Component Starter" : {
+		"prefix": "reactComp",
+		"body": [
+			"import React from 'react';\n",
+			"const $1 = ($2) => {\n\treturn (\n\t\t<$3>\n\t\t\t$0\n\t\t</$3>\n\t);\n};",
+			"export default $1;",
+			""
+		],
+		"description": "Creates the template for a typical React Component"
+	},
+	"React Styled Component Starter" : {
+		"prefix": "reactStyledComp",
+		"body": [
+			"import React from 'react';",
+			"import PropTypes from 'prop-types';",
+			"import { Container, CssBaseline } from '@material-ui/core';",
+			"import { withStyles } from '@material-ui/core/styles';\n",
+			"const styles = (theme) => ({",
+			"\troot: {\n\t\tdisplay: 'flex'\n\t}",
+			"});\n",
+			"const $1 = (props) => {\n\tconst { classes$2 } = props;",
+			"\treturn (\n\t\t<Container component='main'>\n\t\t\t<CssBaseline />",
+			"\t\t\t<div className={classes.root}>\n\t\t\t\t<></>$0\n\t\t\t</div>\n\t\t</Container>\n\t);\n};",
+			"\n$1.propTypes = {\n\tclasses: PropTypes.object.isRequired\n};\n",
+			"export default withStyles(styles)($1);",
+			""
+		],
+		"description": "Creates the template for a typical React Component"
+	},
+	"React Smart Component Starter" : {
+		"prefix": "reactSmartComp",
+		"body": [
+			"import React from 'react';",
+			"import PropTypes from 'prop-types';",
+			"import { Container, CssBaseline } from '@material-ui/core';",
+			"import { withStyles } from '@material-ui/core/styles';",
+			"import { connect } from 'react-redux';",
+			"import { push } from 'connected-react-router';\n",
+			"const styles = (theme) => ({",
+			"\troot: {\n\t\tdisplay: 'flex'\n\t}",
+			"});\n",
+			"class $1 extends React.Component {",
+			"\tconstructor (props) {",
+			"\t\tsuper(props);\n\t\tthis.state = {};\n\t}\n",
+			"\trender () {\n\t\tconst { classes } = this.props;\n",
+			"\t\treturn (\n\t\t\t<Container component='main'>\n\t\t\t\t<CssBaseline />",
+			"\t\t\t\t<div className={classes.root}>\n\t\t\t\t\t<></>$0\n\t\t\t\t</div>\n\t\t\t</Container>\n\t\t);\n\t}\n}",
+			"\n$1.propTypes = {\n\tclasses: PropTypes.object.isRequired\n};\n",
+			"export default connect(null, { push })(withStyles(styles)($1));",
+			""
+		],
+		"description": "Creates the template for a smart / class-based React Component"
+	},
+	"Material-UI Style JS Template" : {
+		"prefix": "muiStyle",
+		"body": [
+			"import { makeStyles } from '@material-ui/core/styles';\n",
+			"const useStyles$1 = makeStyles(theme => ({",
+			"\t$2",
+			"}));",
+			"export default useStyles$1"
+		],
+		"description": "Creates a basic structure for exporting MaterialUI styling in JS."
+	}
+}
